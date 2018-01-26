@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="{{ app()->getLocale() }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 1. Подключить библиотеку jQuery -->
+    <script type="text/javascript" src="resources/assets_project/js/jquery-1.11.1.min.js"></script>
+    <!-- 2. Подключить скрипт moment-with-locales.min.js для работы с датами -->
+    <script type="text/javascript" src="resources/assets_project/js/moment-with-locales.min.js"></script>
+    <!-- 3. Подключить скрипт платформы Twitter Bootstrap 3 -->
+    <script type="text/javascript" src="resources/assets_project/js/bootstrap.min.js"></script>
+    <!-- 4. Подключить скрипт виджета "Bootstrap datetimepicker" -->
+    <script type="text/javascript" src="resources/assets_project/js/bootstrap-datetimepicker.min.js"></script>
+    <!-- 6. Подключить CSS виджета "Bootstrap datetimepicker" -->  
+    <link rel="stylesheet" href="resources/assets_project/css/bootstrap-datetimepicker.min.css" />
+      <link href="resources/assets_project/css/bootstrap.css" rel="stylesheet">
+      <link href="resources/assets_project/css/bootstrap-theme.css" rel="stylesheet">
+    <script type="text/javascript" src="resources/assets_project/js/config.json"></script>
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>DorServis</title>
+
+    <!-- Styles -->
+    <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+</head>
+<body>
+    <div id="app">
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+
+                    <!-- Collapsed Hamburger -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <!-- Branding Image -->
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        DorServis
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="nav navbar-nav">
+                        &nbsp;
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Authentication Links -->
+                        @if (Auth::guest())
+                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('register') }}">Register</a></li>
+                        @else
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endif
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        @yield('content')
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+</body>
+</html>

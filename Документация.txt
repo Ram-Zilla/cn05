@@ -1,0 +1,93 @@
+База данных:
+id
+id_flat(можно не создавать) состоит из количества комнат и номера id (4-255)
+    *info_home
+      -id
+      -flat - количество комнат
+      -floor - этаж на котором находится квартира
+      -house - количество этажей в доме
+      -area - квадратура
+      -green_area - квадратра по зелёнке
+      -total_area - общая квадратура
+      -count_balcony - количество балконов
+      -host_price - цена которая указывает хозяин
+      -price - цена которая определила агенство
+      -price_one_area - цена за один квадратный метр
+       *-furniture - наличие мебели
+            -id
+     php composer.phar show -i       -name
+            -status
+      -area_house - площадь дома
+      -area_yard - площадь участка
+      -description_client - описание клиента
+      -description_workers - описание специалиста
+
+exclusive_of - эксклюзив от
+comments - коментарий
+date_booked - дата забронирования
+who_booked - кем забронирования
+access - доступ (да/нет)
+key_flat - наличие ключа
+date_create - дата создания
+date_create_unix - дата создания в формате unix
+ ???*prepayment - предоплата
+responsible - ответственный
+
+    *documents - наличие документов //создать отдельную таблицу с кодом и названием документов
+      -id
+      -name
+      -status
+    *repairs - таблица с состоянием ремонта
+    *lay_out - таблица с планировкой
+    *position - таблица с позицией
+    *type_pay - таблица с типом оплаты
+    *type_object - таблица с видом объекта
+    *material - таблица с материалом постройки
+    *photos - обычное фото/фото двора/фото планировки
+    *video
+    *type_house - тип дома(квартира, каркас)
+
+    *address - таблица с полным местоположением квартиры
+        -*city - город
+        -*region - район
+        -*territory - территория
+        -*district - округ
+        -*street
+        -maps_x
+        -maps_y
+        -home - номер дома
+        -housing - корпус
+        -entrance - подъезд
+        -apartment_number - номер квартиры
+        -orientir -ориентировочное местоположение
+                            /* -full_address - адрес который не видят пользователи */
+                            /* -full_address - полный(реальный) адрес котрый видят риелторы */
+
+    *price_quality - цена качество
+    *fill_info - заполненость информации
+    *more_info - дополнительная информация (авито и т.д.)
+    *type_flats - тип (продажа/аренда/новостройки)
+
+    *personal_information - таблица с персональными данными
+      -name
+      -phone
+      -more_phone
+      -name_agent
+      -phone_agent
+      -date_recall
+
+    *archive - добавлена ли квартира в архив
+      -status
+      -cause - причина
+      -date - дата добавления в архив
+
+
+
+
+
+
+
+
+
+
+
