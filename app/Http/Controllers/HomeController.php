@@ -10,8 +10,6 @@ use DB;
 use Carbon\Carbon;
 use App\Product;
 use App\Material;
-use App\Category;
-use App\Gallery_product;
 use File;
 
 class HomeController extends Controller
@@ -20,34 +18,21 @@ class HomeController extends Controller
 
 //ГЛАВНАЯ СТРАНИЦА
     public function index(){
-        $category = Category::where('status', 1)->get();
-
-        $recommended_product = Product::where('recommended', 1)->where('status', 1)->get();
-        $popular_product = Product::where('popular', 1)->where('status', 1)->get();
-        $new_product = Product::where('status', 1)->limit(3)->get();
-
-        return view('default.user.home', [
-            'recommended_product' => $recommended_product,
-            'popular_product' => $popular_product,
-            'new_product' => $new_product,
-            'category' => $category,
-        ]);
+        
+        return view('default.user.home');
     }
 
 
-//СТРАНИЦА СО СПИСКОМ ПРОДУКЦИИ
-    public function production(){
 
-        $material = Material::where('status', 1)->get();
-        $category = Category::where('status', 1)->get();
-        $products = Product::where('status', 1)->paginate(8);
 
-        return view('default.user.production', [
-            'material' => $material,
-            'category' => $category,
-            'products' => $products,
-        ]);
-    }
+
+
+
+
+
+
+
+
 
 
 //ОТКРЫТИЕ ОТДЕЛЬНО ВЫБРАННОЙ ПРОДУКЦИИ
@@ -83,11 +68,6 @@ class HomeController extends Controller
         ]);
     }
 
-
-//СТРАНИЦА КОНТАКТЫ
-    public function contacts(){
-        return view('default.user.contact');
-    }
 
 //ЗАЯВКА ДЛЯ БОТА В ТЕЛЕГРАМ
     public function bot(Request $request){

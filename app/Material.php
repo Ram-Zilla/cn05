@@ -10,14 +10,14 @@ class Material extends Model
     use Notifiable;
 
     protected $fillable = [
-        'id', 'name', 'status'
+        'id',
+        'name',
+        'status',
     ];
 
-    protected $table = 'materials';
+    protected $table = 'material';
     protected $primaryKey = 'id';
 
     public $incrementing = false;
     public $timestamps = false;
-
-
 }
