@@ -83,6 +83,10 @@ responsible - ответственный
 
 
 
+****Загрузка обновлений на гит*****
+1. git remote add origin https://github.com/Ram-Zilla/cn05.git
+2. git push -u origin master
+
 
 
 
