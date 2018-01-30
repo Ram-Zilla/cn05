@@ -190,12 +190,131 @@
                 <input placeholder="Дата созвона" name="date_recall" type="date">
             </div>
             <hr>
-
-
-
-                    <span style="color: #5cb85c">Дополнительные параметры</span>
-                    <br>
-            
+            <span style="color: #5cb85c">Дополнительные параметры</span>
+            <br>
+            <div>
+                <h5>Контактные данные</h5>
+                <div>
+                    <div>
+                        <label for="hostName">Имя хозяина</label>
+                        <input placeholder="Имя хозяина" name="hostName" required="" type="text">
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="hostPhone">Номер хозяина</label>
+                        <input placeholder="_ (___) ___-__-__" class="form-control tel-host" required="" maxlength="17" type="tel">
+                        <input placeholder="Номер хозяина" name="hostPhone" required="" type="hidden">
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="hostSecPhone">Дополнительный номер</label>
+                        <input placeholder="_ (___) ___-__-__" class="form-control tel-sec" maxlength="17" type="tel">
+                        <input placeholder="Дополнительный номер" name="hostSecPhone" type="hidden">
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="agentName">Представитель хозяина</label>
+                        <input placeholder="Представитель хозяина" name="agentName" type="text">
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="agentPhone">Номер представителя</label>
+                        <input placeholder="_ (___) ___-__-__" class="form-control tel-agent" maxlength="17" type="tel">
+                        <input placeholder="Номер представителя" name="agentPhone" type="hidden">
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="access">Недоступен</label>
+                        <select name="access" id="" class="form-control">
+                            <option value="">Выберите</option>
+                            <option value="1">Да</option>
+                            <option value="0">Нет</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="nabor">Набрать</label>
+                        <input name="nabor" type="text">
+                        <script>
+                            var Data = new Date();
+                            $("#nabor").dateRangePicker({
+                                autoClose: true,
+                                singleDate : true,
+                                showShortcuts: false,
+                                format: "DD.MM.YYYY",
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <label for="comments">Комментарии</label>
+                        <textarea rows="4" name="comments"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h5>Описание</h5>
+                <div>
+                    <div>
+                        <label for="clientDescr">Описание для клиентов</label>
+                        <textarea name="clientDescr" rows="10" required=""></textarea>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="specDescr">Описание для Специалистов</label>
+                        <textarea name="specDescr" rows="10"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row bottom_bordered" style="margin-bottom: 15px">
+                <div>
+                    <div>
+                        <label>Фото</label>
+                        <input name="img[]" class="form-control" multiple="" accept="image/*" type="file">
+                    </div>
+                    <div>
+                        <button>Загрузить фото</button>
+                        <progress max="100" value="0">0</progress>
+                        <input name="imgtext" type="hidden">
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label>Видео(Введите ссылку)</label>
+                        <input name="video" pattern="https://.*" class="form-control" placeholder="https://..." type="text">
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label>Фото двора</label>
+                        <input name="imgYard[]" class="form-control" multiple="" accept="image/*" type="file">
+                    </div>
+                    <div>
+                        <button class="btn btn-primary">Загрузить фото</button>
+                        <progress max="100" value="0">0</progress>
+                        <input name="imgYtext" type="hidden">
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label>Фото планировки</label>
+                        <input name="imgLayout[]" multiple="" accept="image/*" type="file">
+                    </div>
+                    <div>
+                        <button>Загрузить фото</button>
+                        <progress max="100" value="0">0</progress>
+                        <input name="imgLtext" type="hidden">
+                    </div>
+                </div>
+            </div>
 
 
 
