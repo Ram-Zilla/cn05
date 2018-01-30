@@ -82,4 +82,15 @@ class AdministratorController extends Controller
         ]);
     }
 
+
+    //ФУНКЦИЯ ДЛЯ ДОБАВЛЕНИЯ ОБЪЯВЛЕНИЯ
+    public function add_ads(Request $request){
+
+        dump($request);
+
+    }
+
+
+
+
 }

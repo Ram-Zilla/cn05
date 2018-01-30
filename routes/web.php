@@ -46,6 +46,14 @@ Route::group(['middleware'=>['web','auth']], function() {
 		]);
 
 
+//Запрос на добавление нового объявления
+    Route::post('Administrator/add',
+        [
+            'as' => 'add_ads',
+            'uses' => 'AdministratorController@add_ads'
+        ]);
+
+
 
 //Открытие отдельно выбранной продукции
 //    Route::get('Administrator/Production/{id?}',

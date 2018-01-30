@@ -3,7 +3,7 @@
 @section('content')
     <div style="color: red; padding-bottom: 20px">Главная (Администратор): Добавление недвижимости->Продажа->Квартира</div>
 
-    <form method="post" action="#">
+    <form method="post" action="{{route('add_ads')}}">
         {{ csrf_field() }}
         <div>
                     <hr>
