@@ -20,4 +20,9 @@ class Territory extends Model
 
     public $incrementing = false;
     public $timestamps = false;
+
+    static public function get_territory(){
+        $territory = Territory::where('status', 1)->get();
+        return $territory;
+    }
 }

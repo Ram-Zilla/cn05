@@ -20,4 +20,9 @@ class Type_pay extends Model
 
     public $incrementing = false;
     public $timestamps = false;
+
+    static public function get_type_pay(){
+        $type_pay = Type_pay::where('status', 1)->get();
+        return $type_pay;
+    }
 }

@@ -48,38 +48,37 @@ class AdministratorController extends Controller
     //ГЛАВНАЯ СТРАНИЦА
     public function index(){
 
-        $city = City::where('status', 1)->get();
-        $region = Region::where('status', 1)->get();
-        $territory = Territory::where('status', 1)->get();
-        $district = District::where('status', 1)->get();
-        $type_object = Type_object::where('status', 1)->get();
-        $material = Material::where('status', 1)->get();
-        $repairs = Repairs::where('status', 1)->get();
-        $lay_out = Lay_out::where('status', 1)->get();
-        $position = Position::where('status', 1)->get();
-        $documents = Documents::where('status', 1)->get();
-        $type_pay = Type_pay::where('status', 1)->get();
-        $more_info = More_info::where('status', 1)->get();
-        $price_quality = Price_quality::where('status', 1)->get();
-        $fill_info = Fill_info::where('status', 1)->get();
-
-
+        $city = City::get_city();
+        $region = Region::get_region();
+        $territory = Territory::get_territory();
+        $district = District::get_district();
+        $type_object = Type_object::get_type_object();
+        $material = Material::get_material();
+        $repairs = Repairs::get_repairs();
+        $lay_out = Lay_out::get_lay_out();
+        $position = Position::get_position();
+        $documents = Documents::get_documents();
+        $type_pay = Type_pay::get_type_pay();
+        $more_info = More_info::get_more_info();
+        $price_quality = Price_quality::get_price_quality();
+        $fill_info = Fill_info::get_fill_info();
+        
 
         return view('default.Administrator.home', [
-            '$city' => $city,
-            '$region' => $region,
-            '$territory' => $territory,
-            '$district' => $district,
-            '$type_object' => $type_object,
-            '$material' => $material,
-            '$repairs' => $repairs,
-            '$lay_out' => $lay_out,
-            '$position' => $position,
-            '$documents' => $documents,
-            '$type_pay' => $type_pay,
-            '$more_info' => $more_info,
-            '$price_quality' => $price_quality,
-            '$fill_info' => $fill_info,
+            'city' => $city,
+            'region' => $region,
+            'territory' => $territory,
+            'district' => $district,
+            'type_object' => $type_object,
+            'material' => $material,
+            'repairs' => $repairs,
+            'lay_out' => $lay_out,
+            'position' => $position,
+            'documents' => $documents,
+            'type_pay' => $type_pay,
+            'more_info' => $more_info,
+            'price_quality' => $price_quality,
+            'fill_info' => $fill_info,
         ]);
     }
 

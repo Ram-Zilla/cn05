@@ -20,4 +20,9 @@ class Position extends Model
 
     public $incrementing = false;
     public $timestamps = false;
+
+    static public function get_position(){
+        $position = Position::where('status', 1)->get();
+        return $position;
+    }
 }

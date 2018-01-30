@@ -20,4 +20,9 @@ class Fill_info extends Model
 
     public $incrementing = false;
     public $timestamps = false;
+
+    static public function get_fill_info(){
+        $fill_info = Fill_info::where('status', 1)->get();
+        return $fill_info;
+    }
 }

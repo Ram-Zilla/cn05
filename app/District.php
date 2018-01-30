@@ -20,4 +20,9 @@ class District extends Model
 
     public $incrementing = false;
     public $timestamps = false;
+
+    static public function get_district(){
+        $district = District::where('status', 1)->get();
+        return $district;
+    }
 }

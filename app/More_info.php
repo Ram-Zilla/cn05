@@ -20,4 +20,9 @@ class More_info extends Model
 
     public $incrementing = false;
     public $timestamps = false;
+
+    static public function get_more_info(){
+        $more_info = More_info::where('status', 1)->get();
+        return $more_info;
+    }
 }

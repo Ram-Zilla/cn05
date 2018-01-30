@@ -20,4 +20,10 @@ class Price_quality extends Model
 
     public $incrementing = false;
     public $timestamps = false;
+
+
+    static public function get_price_quality(){
+        $price_quality = Price_quality::where('status', 1)->get();
+        return $price_quality;
+    }
 }

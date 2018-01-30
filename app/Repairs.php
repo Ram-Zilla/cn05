@@ -20,4 +20,9 @@ class Repairs extends Model
 
     public $incrementing = false;
     public $timestamps = false;
+
+    static public function get_repairs(){
+        $repairs = Repairs::where('status', 1)->get();
+        return $repairs;
+    }
 }

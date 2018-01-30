@@ -20,4 +20,9 @@ class Type_object extends Model
 
     public $incrementing = false;
     public $timestamps = false;
+
+    static public function get_type_object(){
+        $type_object = Type_object::where('status', 1)->get();
+        return $type_object;
+    }
 }

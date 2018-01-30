@@ -20,4 +20,9 @@ class City extends Model
 
     public $incrementing = false;
     public $timestamps = false;
+
+    static public function get_city(){
+        $city = City::where('status', 1)->get();
+        return $city;
+    }
 }

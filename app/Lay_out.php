@@ -20,4 +20,9 @@ class Lay_out extends Model
 
     public $incrementing = false;
     public $timestamps = false;
+
+    static public function get_lay_out(){
+        $lay_out = Lay_out::where('status', 1)->get();
+        return $lay_out;
+    }
 }

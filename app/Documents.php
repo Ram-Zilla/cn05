@@ -20,4 +20,9 @@ class Documents extends Model
 
     public $incrementing = false;
     public $timestamps = false;
+
+    static public function get_documents(){
+        $documents = Documents::where('status', 1)->get();
+        return $documents;
+    }
 }
